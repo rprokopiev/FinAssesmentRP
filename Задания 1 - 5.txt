@@ -1,0 +1,571 @@
+	***ЗАДАНИЕ 1***
+enat@enat-VirtualBox:~$ cat > Pets
+Dogs
+Cats
+Hamsters
+^C
+
+enat@enat-VirtualBox:~$ cat > PackAnimals
+Horses
+Camels
+Donkeys
+^C
+
+	***ЗАДАНИЕ 2***
+enat@enat-VirtualBox:~$ mkdir FinAssesment
+enat@enat-VirtualBox:~$ mv PackAnimals ~/FinAssesment
+enat@enat-VirtualBox:~$ mv Pets ~/FinAssesment
+enat@enat-VirtualBox:~$ cd FinAssesment/
+enat@enat-VirtualBox:~/FinAssesment$ ls -l
+total 8
+-rw-rw-r-- 1 enat enat 22 Jul 25 21:41 PackAnimals
+-rw-rw-r-- 1 enat enat 19 Jul 25 21:40 Pets
+
+	***ЗАДАНИЕ 3***
+enat@enat-VirtualBox:~/FinAssesment$ sudo apt install mysql-server -y
+[sudo] password for enat:
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  galera-4 libconfig-inifiles-perl libdbd-mysql-perl libdbi-perl libmariadb3 libmysqlclient21 libsnappy1v5 libterm-readkey-perl mariadb-common socat
+Use 'sudo apt autoremove' to remove them.
+The following NEW packages will be installed:
+  mysql-server
+0 upgraded, 1 newly installed, 0 to remove and 2 not upgraded.
+Need to get 9,462 B of archives.
+After this operation, 35.8 kB of additional disk space will be used.
+Get:1 http://ru.archive.ubuntu.com/ubuntu jammy-updates/main amd64 mysql-server all 8.0.33-0ubuntu0.22.04.2 [9,462 B]
+Fetched 9,462 B in 0s (90.6 kB/s)
+Selecting previously unselected package mysql-server.
+(Reading database ... 183541 files and directories currently installed.)
+Preparing to unpack .../mysql-server_8.0.33-0ubuntu0.22.04.2_all.deb ...
+Unpacking mysql-server (8.0.33-0ubuntu0.22.04.2) ...
+Setting up mysql-server (8.0.33-0ubuntu0.22.04.2) ...
+
+	***ЗАДАНИЕ 4***
+enat@enat-VirtualBox:~/FinAssesment$ sudo apt download tree
+Get:1 http://ru.archive.ubuntu.com/ubuntu jammy/universe amd64 tree amd64 2.0.2-1 [47.9 kB]
+Fetched 47.9 kB in 0s (677 kB/s)
+W: Download is performed unsandboxed as root as file '/home/enat/FinAssesment/tree_2.0.2-1_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)
+enat@enat-VirtualBox:~/FinAssesment$ ls
+PackAnimals  Pets  tree_2.0.2-1_amd64.deb
+enat@enat-VirtualBox:~/FinAssesment$ sudo dpkg -i tree_2.0.2-1_amd64.deb
+Selecting previously unselected package tree.
+(Reading database ... 183543 files and directories currently installed.)
+Preparing to unpack tree_2.0.2-1_amd64.deb ...
+Unpacking tree (2.0.2-1) ...
+Setting up tree (2.0.2-1) ...
+Processing triggers for man-db (2.10.2-1) ...
+enat@enat-VirtualBox:~/FinAssesment$ sudo dpkg -r tree
+(Reading database ... 183551 files and directories currently installed.)
+Removing tree (2.0.2-1) ...
+Processing triggers for man-db (2.10.2-1) ...
+
+	***ЗАДАНИЕ 5***
+enat@enat-VirtualBox:~/FinAssesment$ history
+    1  uname
+    2  uname -a
+    3  hostnamectl
+    4  lsb_release -a
+    5  clear
+    6  sudo apt update
+    7  sudo apt install openssh-server -y
+    8  sudo systemctl start ssh
+    9  sudo systemctl status ssh
+   10  sudo systemctl enable ssh
+   11  ip addr
+   12  hostname -I
+   13  sudo apt update
+   14  sudo apt instal mc
+   15  sudo apt install mc
+   16  mc
+   17  uname
+   18  hostname -I
+   19  whoami
+   20  uname
+   21  hostnamectl
+   22  clear
+   23  hostnamectl
+   24  ip a
+   25  sudo ip link add veth0 type veth peer name veth1
+   26  ip a
+   27  sudo ip link set veth1 netns testns
+   28  ip a
+   29  hostname -I
+   30  sudo ip addr add 192.168.125/24 dev veth0
+   31  sudo ip link set dev veth0 up
+   32  ip a
+   33  ping 192.168.125.0
+   34  sudo ip netns list
+   35  sudo ip netns add testns 123
+   36  sudo ip netns list
+   37  sudo ip netns exec testns123 bash
+   38  sudo ip netns exec testns bash
+   39  clear
+   40  cd /proc
+   41  ls -l
+   42  cd ns/
+   43  cd/6346
+   44  echo &&
+   45  cd
+   46  echo &&
+   47  cd ns/
+   48  echo $$
+   49  cd 48811
+   50  cd /proc/48811
+   51  cd ns
+   52  ls -l
+   53  sudo unshare --net /bin/bash
+   54  ls -l
+   55  ls -l /proc/$$/ns
+   56  top
+   57  sudo unshare --pid --fork --mount-proc /bin/bash
+   58  ls -l /proc/$$/ns
+   59  ls -l
+   60  sudo apt install lxc debootstrap bridge-utils lxc-templates
+   61  sudo lxc-create -n test-ubuntu-1 -t ubuntu
+   62  sudo lxc-start -n test-ubuntu-1
+   63  sudo lxc-attach -n test-ubuntu-1
+   64  sudo lxc-cgroup -n test-ubuntu-1 memory.max 256M
+   65  free -m
+   66  sudo lxc-attach -n test-ubuntu-1
+   67  sudo lxc-ls
+   68  sudo lxc-create -n test-123 -t ubuntu -f
+   69  sudo lxc-create -n test-123 -t ubuntu
+   70  sudo lxc-ls
+   71  clear
+   72  find docer
+   73  find docker
+   74  apt install docer
+   75  clear
+   76  for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
+   77  sudo apt-get update
+   78  sudo apt-get update
+   79  sudo apt-get install ca-certificates curl gnupg
+   80  sudo install -m 0755 -d /etc/apt/keyrings
+   81  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+   82  sudo chmod a+r /etc/apt/keyrings/docker.gpg
+   83  echo   "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+   84    "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" |   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+   85  sudo apt-get update
+   86  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+   87  sudo docker run hello-world
+   88  docker --help
+   89  docker run --help
+   90  docker --version
+   91  docker info
+   92  clear
+   93  docker pull ubuntu
+   94  docker pull ubuntu:18.04
+   95  sudo docker pull ubuntu
+   96  docker images
+   97  sudo docker images
+   98  sudo rmi ubuntu
+   99  sudo docker rmi ubuntu
+  100  sudo docker images
+  101  sudo docker ps -a
+  102  clear
+  103  sudo docker run -it ubuntu bash
+  104  sudo docker run -it ubuntu date
+  105  sudo docker run --publish 8080:80 nginx
+  106  clear
+  107  docker ps -a
+  108  sudo docker ps -a
+  109  sudo docker rm $(docke ps -a -Q)
+  110  docker stop
+  111  docke ps -a
+  112  sudo docker ps -a
+  113  sudo docker system df
+  114  sudo docker system prune -af
+  115  sudo docker ps -a
+  116  sudo docker images
+  117  sudo docker ps -a
+  118  docker run -it ubuntu:22.10 bash
+  119  sudo docker run -it ubuntu:22.10 bash
+  120  docker ps
+  121  sudo docker ps
+  122  sudo docker
+  123  sudo docker volume ls
+  124  sudo docker exec -it gb-test-new-1 bash
+  125  sudo docker ps
+  126  cat test.txt
+  127  ls -l
+  128  sudo docker volume ls
+  129  docker ps
+  130  sudo docker ps
+  131  sudo docker inspect -f '{{ .mounts }}' f1b7ddd946e7
+  132  sudo docker inspect -f '{{ .Mounts }}' f1b7ddd946e7
+  133  sudo docker inspect f1b7ddd946e7
+  134  ls -l
+  135  mkdir mydb
+  136  cd mydb
+  137  cd
+  138  ls -l
+  139  sudo docker run --name test-mariadb-new -e MARIADB_ROOT_PASSPORT=123 -v./mydb:/var/lib/mysql -d mariadb:10.10.2
+  140  docker ps
+  141  sudo docker ps
+  142  sudo docker image
+  143  sudo docker ls
+  144  sudo docker image ls
+  145  sudo docker exec -it test-mariadb-new bash
+  146  sudo docker run test-mariadb-new
+  147  sudo docker run --help
+  148  sudo docker run -e password=123 test-mariadb-new
+  149  sudo docker run -detach --name test-mariadb-new --env MARIADB_PASSWORD=123
+  150  sudo docker run -D --name test-mariadb-new --env MARIADB_PASSWORD=123
+  151  sudo docker run -d --name test-mariadb-new --env MARIADB_PASSWORD=123
+  152  sudo docker run --name test-mariadb-new --e MARIADB_ROOT_PASSWORD=123 -d mariadb:10.10.2
+  153  sudo docker run --name test-mariadb-new -e MARIADB_ROOT_PASSWORD=123 -d mariadb:10.10.2
+  154  sudo docker ls
+  155  sudo docker -ls
+  156  docker ps
+  157  sudo docker ps
+  158  sudo docker run --name test-mariadb-new-1 -e MARIADB_ROOT_PASSPORT=123 -v./mydb:/var/lib/mysql -d mariadb:10.10.2
+  159  sudo docker ps
+  160  cd /mydb:/var/lib/mysql
+  161  tree
+  162  cd /mydb
+  163  mcdir var
+  164  mkdir var
+  165  cd var
+  166  cd lib/mysql
+  167  mkdir lib/mysql
+  168  mkdir lib
+  169  cd lib
+  170  mkdir mysql
+  171  cd
+  172  tree
+  173  rm var
+  174  rmdir var
+  175  rmdir var/lib/mysql
+  176  rmdir var/lib
+  177  rmdir var
+  178  tree
+  179  cd mydb
+  180  cd
+  181  sudo docker exec -it test-mariadb-new-1 bash
+  182  nano test.txt
+  183  echo test.txt sudo docker run --name test-mariadb-new -e MARIADB_ROOT_PASSPORT=123 -v./mydb:/var/lib/mysql -d mariadb:10.10.2
+  184  nano test.txt
+  185  echo sudo docker run --name test-mariadb-new -e MARIADB_ROOT_PASSPORT=123 -v./mydb:/var/lib/mysql -d mariadb:10.10.2 >> test.txt
+  186  can test.txt
+  187  cat test.txt
+  188  echo sudo docker exec -it test-mariadb-new bash >> test.txt
+  189  cat test.txt
+  190  echo mysql-u root -p >> test.txt
+  191  echo show databases >> test.txt
+  192  echo CERATE DATABASE GB >> test.txt
+  193  cat test.txt
+  194  nano test.txt
+  195  cat test.txt
+  196  docker ps
+  197  sudo docker ps
+  198  ls -l
+  199  top
+  200  ifconfig
+  201  ip a
+  202  docker ps
+  203  sudo docker ps
+  204  sudo docker ps -a
+  205  sudo docker start 1ca901583bbc
+  206  sudo docker ps
+  207  sudo docker exec -it 1ca901583bbc
+  208  sudo docker rm 1ca901583bbc
+  209  sudo docker stop 1ca901583bbc
+  210  sudo docker rm 1ca901583bbc
+  211  sudo docker ps
+  212  docker run -it -h GB --name gb-test-new-1 ubuntu:22.10
+  213  sudo docker run -it -h GB --name gb-test-new-1 ubuntu:22.10
+  214  cd /var/www/gb/docker/3
+  215  sudo docker volume ls
+  216  ls -l
+  217  tree
+  218  docker volume ls
+  219  sudo docker volume ls
+  220  sudo docker run -it -h GB --name gb-test-new-1 ubuntu:22.10
+  221  nano test.txt
+  222  ls -l
+  223  cat test.txt
+  224  sudo docker run -it -v ./test.txt:/test.txt ubuntu:22.10
+  225  ls -l
+  226  mkdir HW4
+  227  cd HW4
+  228  cd
+  229  rm Dockefile
+  230  rm Dockerfile
+  231  rm test2.txt
+  232  rm test.txt
+  233  ls -l
+  234  cd HW4
+  235  ls -l
+  236  nano Dockerfile
+  237  cd
+  238  nano Dockerfile
+  239  ls -l
+  240  cd HW4
+  241  ls -l
+  242  nano Dockerfile
+  243  cat Dockerfile
+  244  sudo docker ps
+  245  nano Dockerfile
+  246  CD
+  247  cd
+  248  cd/opt
+  249  cd/chroot
+  250  cd chroot
+  251  ls -l
+  252  cd
+  253  .
+  254  find mariadb
+  255  sudo apt intstall mariadb
+  256  sudo apt install mariadb
+  257  sudo find  mariadb
+  258  sudo docker ps
+  259  ..
+  260  .
+  261  ./
+  262  cd .
+  263  cd chroot
+  264  cd .
+  265  cd
+  266  sudo docker run --detach --name mariadb-3 --env MARIADB_ROOT_PASSWORD=test123 -v./mydb:/var/lib/mysql -d mariadb:10.10.2
+  267  sudo docker pas
+  268  sudo docker ps
+  269  run --name mariadb-3 -v /my/custom:/etc/mysql/conf.d --rm mariadb:latest my_print_defaults --mysqld
+  270  sudo docker run --name mariadb-3 -v /my/custom:/etc/mysql/conf.d --rm mariadb:latest my_print_defaults --mysqld
+  271  sudo docker images
+  272  cd /opt/bitnami/mariadb/conf
+  273  sudo apt update
+  274  sudo apt upgrade
+  275  sudo apt-get install mariadb-server mariadb-client -y
+  276  mysql -V
+  277  sudo systemctl status mariadb
+  278  cd /etc/mysql/mariadb.conf.d
+  279  ls -l
+  280  tree
+  281  cat 50-server.cnf
+  282  ls -l
+  283  cat 50-client.cnf
+  284  cat 50-mysql-clients.cnf
+  285  cat 50-mysql-client
+  286  cat 50-mysqld-safe.cnf
+  287  cat 50-mysqld_safe.cnf
+  288  ls -l
+  289  cat 50-server.cnf
+  290  ..
+  291  .
+  292  ./
+  293  cd
+  294  cd /opt/bitnami/mariadb/conf/my. cnf
+  295  cd /opt/
+  296  ls -l
+  297  cd /etc/mysql
+  298  ls -l
+  299  cd mariadb.cnf
+  300  ls -l
+  301  cat mariadb.cnf
+  302  cd
+  303  ls -l
+  304  cd HW4
+  305  ls -l
+  306  > myWH.cnf
+  307  ls -l
+  308  mv myWH.cnf myHW.cnf
+  309  ls -l
+  310  nano myHW.cnf
+  311  nano Dockerfile
+  312  sudo docker build -t mariadb-HW4
+  313  sudo docker build -t mariadb-HW4 .
+  314  sudo docker build -t mariadb-hw4 .
+  315  nano Dockerfile
+  316  sudo docker build -t mariadb-hw4 .
+  317  nano Dockerfile
+  318  sudo docker ps
+  319  sudo docker run --detach --name mariadb-hw --env MAIADB_ROOT_PASSWORD=test123 -d mariadb-hw4
+  320  sudo docker ps
+  321  sudo docker images
+  322  sudo docker run --name mariadb-hw --e MAIADB_ROOT_PASSWORD=test123 -d mariadb-hw4
+  323  sudo docker run --name mariadb-hw -e MAIADB_ROOT_PASSWORD=test123 -d mariadb-hw4
+  324  sudo docker run --name mariadb-hw -e MAIADB_ROOT_PASSWORD=test123 -d mariadb-hw4.1
+  325  sudo docker ps
+  326  sudo docker images
+  327  sudo docker run --name mariadb-hw -e MAIADB_ROOT_PASSWORD=test123 -d hw4-mariadb
+  328  sudo docker run --name mariadb-hw -e MAIADB_ROOT_PASSWORD=test123 -d my hw4-mariadb
+  329  sudo docker run --name mariadb-hw -e MAIADB_ROOT_PASSWORD=test123 -d my mariadb-hw4
+  330  sudo docker run --name mariadb-hw -e MAIADB_ROOT_PASSWORD=test123 -d mariadb-hw4
+  331  sudo docker rm 69b23afb9ba263c961921914fa8d3806acab7a7e4fb11977a094a91db5273d24
+  332  sudo docker ps
+  333  sudo docker images
+  334  sudo docker run --name mariaHW -e MARIADB_ROOT_PASSWORD=test123 -d mariadb-hw4
+  335  sudo docker ps
+  336  cd HW4
+  337  myHW.cnf
+  338  nano myHW.cnf
+  339  sudo docker run -- name phpmyadmin1607 -d --link mariaHW:db -p 8080:80 phpmyadmin
+  340  sudo docker run --name phpmyadmin1607 -d --link mariaHW:db -p 8080:80 phpmyadmin
+  341  sudo docker ps
+  342  cd HW4
+  343  mkdir addit
+  344  cd addit
+  345  nano Dockerfile
+  346  sudo docker build -t db-alpine .
+  347  sudo docker ps
+  348  sudo docker images
+  349  sudo docker build -t db-alpine .
+  350  sudo docker ps
+  351  cd HW4
+  352  ls -l
+  353  cd addit
+  354  ls -l
+  355  sudo docker build -t db-alpine .
+  356  sudo docker ps
+  357  nano Dockerfile
+  358  sudo docker build -t db-alpine .
+  359  sudo docker ps
+  360  nano Dockerfile
+  361  sudo docker build -t db-alpine .
+  362  sudo docker ps
+  363  sudo docker images
+  364  sudo docker run --name db-alpine
+  365  sudo docker run --name db-alpine .
+  366  sudo docker run --name db-alpine -d maria1607
+  367  sudo docker run --name maria1607 -d db-alpine
+  368  nano Dockerfile
+  369  sudo docker run --name maria1607 -d db-alpine
+  370  sudo docker run --name maria167 -d db-alpine
+  371  nano Dockerfile
+  372  sudo docker run --name maria16 -d db-alpine
+  373  nano Dockerfile
+  374  sudo docker run --name maria1 -d db-alpine
+  375  sudo dockers images
+  376  sudo docker images
+  377  nano Dockerfile
+  378  sudo docker run --name maria8881 -d db-alpine
+  379  nano Dockerfile
+  380  sudo docker ps
+  381  sudo docker build -t db-alpine2 .
+  382  sudo docker images
+  383  sudo docker run --name maria22 -d db-alpine2
+  384  sudo docker ps
+  385  mkdir HW5
+  386  cd WH5
+  387  ls =l
+  388  ls -l
+  389  cd HW5
+  390  > compose.yaml
+  391  nano compose.yaml
+  392  sudo docker compose up
+  393  nano compose.yaml
+  394  sudo docker compose up
+  395  nano compose.yaml
+  396  sudo docker compose up
+  397  nano compose.yaml
+  398  sudo docker compose -d
+  399  sudo docker compose up -d
+  400  sudo docker ps
+  401  nano compose.yaml
+  402  sudo docker compose stop
+  403  sudo docker ps
+  404  sudo docker ps -a
+  405  sudo docker compose down
+  406  ls -l
+  407  cd LECT-last_Info/
+  408  ls -l
+  409  cat docker-compose.yaml
+  410  mv docker-compose.yaml proga.yaml
+  411  ls -l
+  412  sudo docker-compose build
+  413  nano proga.yaml
+  414  cd
+  415  mkdir SEM-last
+  416  cd LECT-last_Info/
+  417  nano proga.yaml
+  418  docker compose info
+  419  cd
+  420  ls -l
+  421  ..
+  422  cd LECT-last_Info/
+  423  nano proga.yaml
+  424  docker swarm init
+  425  sudo docker swarm init
+  426  sudo docker node -ls
+  427  sudo docker node ls
+  428  ls -l
+  429  cat Pets
+  430  cat > Pets
+  431  ls -l
+  432  cat Pets
+  433  nano Pets
+  434  rm Pets
+  435  ls -l
+  436  cat > Pets
+  437  cat Pets
+  438  rm Pets
+  439  cat > Pets
+  440  cat Pets
+  441  cat > PackAnimals
+  442  cat PackAnimals
+  443  mkdir FinAssesment
+  444  mv PackAnimals ~/FinAssesment
+  445  mv Pets ~/FinAssesment
+  446  cd FinAssesment
+  447  ls -l
+  448  cat /etc/apt/sources.list
+  449  apt-add-repository --help
+  450  apt search mysql
+  451  find mysql
+  452  apt find mysql
+  453  apt search mysql
+  454  apt list mysql
+  455  ls -l
+  456  sudo apt update
+  457  apt list mysql
+  458  cd /etc/mysql
+  459  ls -l
+  460  sudo apt remove mysql
+  461  cd
+  462  sudo apt remove mysql
+  463  sudo apt show mysql
+  464  sudo apt intall mysql-server
+  465  sudo apt install mysql-server
+  466  sudo apt show mysql-server
+  467  dpkg --help
+  468  sudo apt download zip
+  469  ls
+  470  sudo dpkg -i zip_3.0-12build2_amd64.deb
+  471  sudo dpkg -r zip_3.0-12build2_amd64.deb
+  472  sudo dpkg -r zip
+  473  sudo dpkg -P zip
+  474  sudo apt download notepad
+  475  sudo apt remove tree
+  476  sudo apt download tree
+  477  ls
+  478  sudo dpkg -i tree_2.0.2-1_amd64.deb
+  479  sudo dpkg -r tree
+  480  history
+  481  apt --help
+  482  sudo apt remove mysql-server
+  483  exit
+  484  ls -l
+  485  rm tree_2.0.2-1_amd64.deb
+  486  rm zip_3.0-12build2_amd64.deb
+  487  ls -l
+  488  rm FinAssesment/
+  489  rm -d FinAssesment/
+  490  rm -r FinAssesment/
+  491  ls -l
+  492  exit
+  493  cat > Pets
+  494  cat > PackAnimals
+  495  mkdir FinAssesment
+  496  mv PackAnimals ~/FinAssesment
+  497  mv Pets ~/FinAssesment
+  498  cd FinAssesment/
+  499  ls -l
+  500  sudo apt install mysql-server -y
+  501  sudo apt download tree
+  502  ls
+  503  sudo dpkg -i tree_2.0.2-1_amd64.deb
+  504  sudo dpkg -r tree
+  505  history
