@@ -3,12 +3,9 @@ package Units;
 import java.sql.Date;
 import java.util.ArrayList;
 
-public abstract class Cat extends Pets{
+public class Cat extends Pets{
 
-    public Cat(Date birthDate, Integer id, String typeName, String name, ArrayList<String> commands) {
-        super(birthDate, id, typeName, name, commands);
-        //TODO Auto-generated constructor stub
+    public Cat(ArrayList<String> commands, Date birthDate, String name) {
+        super(commands, birthDate, name);
     }
-
-    
 }

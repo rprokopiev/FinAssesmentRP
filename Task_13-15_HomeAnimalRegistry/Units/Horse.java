@@ -3,13 +3,10 @@ package Units;
 import java.sql.Date;
 import java.util.ArrayList;
 
-public abstract class Horse extends PackAnimals{
+public class Horse extends PackAnimals{
 
-    public Horse(Date birthDate, Integer id, String typeName, String name, ArrayList<String> commands) {
-        super(birthDate, id, typeName, name, commands);
+    public Horse(ArrayList<String> commands, Date birthDate, String name) {
+        super(commands, birthDate, name);
         //TODO Auto-generated constructor stub
     }
-
-    
-    
 }

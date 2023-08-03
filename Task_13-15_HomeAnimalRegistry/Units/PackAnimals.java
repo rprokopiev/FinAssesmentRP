@@ -5,9 +5,8 @@ import java.util.ArrayList;
 
 public abstract class PackAnimals extends BaseAnimal{
 
-    public PackAnimals(Date birthDate, Integer id, String typeName, String name, ArrayList<String> commands) {
-        super(birthDate, id, typeName, name, commands);
+    public PackAnimals(ArrayList<String> commands, Date birthDate, String name) {
+        super(commands, birthDate, name);
         //TODO Auto-generated constructor stub
-    }   
-    
+    }
 }

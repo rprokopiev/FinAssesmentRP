@@ -1,6 +1,7 @@
+package Prompt;
 import java.util.Scanner;
 
-public class GetInteger {
+public class PromptInt {
     // получить от пользователя Integer в заданом диапазоне
     public static Integer GetRequiredIntegerFromUser(String message, Scanner scan, int min, int max) {
         Integer input = GetIntegerFromUser(message, scan);

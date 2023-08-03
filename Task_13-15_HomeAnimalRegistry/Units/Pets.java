@@ -5,11 +5,9 @@ import java.util.ArrayList;
 
 public abstract class Pets extends BaseAnimal{
 
-    public Pets(Date birthDate, Integer id, String typeName, String name, ArrayList<String> commands) {
-        super(birthDate, id, typeName, name, commands);
+    public Pets(ArrayList<String> commands, Date birthDate, String name) {
+        super(commands, birthDate, name);
         //TODO Auto-generated constructor stub
     }
 
-   
-    
 }
