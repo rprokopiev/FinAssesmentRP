@@ -1,3 +1,5 @@
+// Получить строковое значение от пользователя
+
 package Prompt;
 
 import java.util.Scanner;

@@ -7,6 +7,5 @@ public class Camel extends PackAnimals{
 
     public Camel(ArrayList<String> commands, Date birthDate, String name) {
         super(commands, birthDate, name);
-        //TODO Auto-generated constructor stub
     }
 }

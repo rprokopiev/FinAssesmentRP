@@ -7,6 +7,5 @@ public class Donkey extends PackAnimals{
 
     public Donkey(ArrayList<String> commands, Date birthDate, String name) {
         super(commands, birthDate, name);
-        //TODO Auto-generated constructor stub
     }
 }
